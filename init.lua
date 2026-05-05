@@ -99,6 +99,8 @@ vim.diagnostic.config({
 --              - lhs is the new map meaning
 --==============================
 
+-- terminal quick
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 
 -- Highlight when yanking (copying) text.
