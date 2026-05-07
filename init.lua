@@ -24,8 +24,8 @@ require("config.lazy")
 
 
 --Line number
---vim.opt.number = true
-vim.opt.relativenumber = true
+vim.opt.number = true
+--vim.opt.relativenumber = true
 
 --Search
 vim.opt.ignorecase = true
@@ -129,9 +129,9 @@ vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end,
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist,
   { desc = "Open diagnostics list" })
 
-
--- vim.keymap.set("i", "<C-c>", "<Esc>",
---        {desc = "Make <C-c> like <Esc>"})
+ -- <C-c> is "stop", not leave, so it sould be mapped as <Esc>
+ vim.keymap.set("i", "<C-c>", "<Esc>",
+        {desc = "Make <C-c> like <Esc>"})
 
 --=================================
 -- About Neovide settings
