@@ -3,7 +3,7 @@ return {
   "zbirenbaum/copilot.lua",  -- the plugin repository
 
   -- Load it when entering insert mode (lazy loading — faster startup)
-  event = "InsertEnter",
+  cmd = "Copilot",
 
   opts = {
     suggestion = {

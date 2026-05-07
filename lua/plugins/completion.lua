@@ -7,7 +7,7 @@ return {
   opts = {
     -- 按鍵設定
     keymap = {
-      preset = "super-tab",       -- VSCode 風格：Tab 接受補全
+      preset = "enter",       -- VSCode 風格：Tab 接受補全
     },
 
     -- 外觀設定
