@@ -1,6 +1,3 @@
--- 2026/4/24 add plugin tool called "lazy.nvim"
--- 2026/4/22 my settings
--- 2026/4/28 many settings to run
     
 --==================================
 -- require, Lua's "import module", It's the same as #include, or use
