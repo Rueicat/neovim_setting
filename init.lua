@@ -107,7 +107,7 @@ do
   --  For more options, you can see `:help option-list`
 
   -- Make line numbers default
-  vim.o.number = true
+  vim.o.number = false
   -- You can also add relative line numbers, to help with jumping.
   --  Experiment for yourself to see if you like it!
   -- vim.o.relativenumber = true
@@ -171,6 +171,17 @@ do
   -- instead raise a dialog asking if you wish to save the current file(s)
   -- See `:help 'confirm'`
   vim.o.confirm = true
+
+  -- [[ Neovide 設定 ]]
+  -- vim.g.neovide 只有在 Neovide 裡才是 true，終端機 nvim 會直接跳過這段
+  if vim.g.neovide then
+    vim.g.neovide_cursor_animation_length = 0   -- 游標移動動畫：0 = 瞬間移動
+    vim.g.neovide_cursor_trail_size = 0         -- 游標殘影：0 = 關閉
+    vim.g.neovide_cursor_vfx_mode = ''          -- 游標特效（粒子等）：空字串 = 關閉
+
+    vim.o.guifont = 'Consolas:h12'
+  end
+
 end
 
 -- ============================================================
@@ -434,7 +445,8 @@ do
   -- Load the colorscheme here.
   -- Like many other themes, this one has different styles, and you could load
   -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  vim.cmd.colorscheme 'tokyonight-night'
+  vim.o.background  = 'light'
+  vim.cmd.colorscheme 'catppuccin'
 
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }
@@ -733,16 +745,16 @@ do
   --  See `:help lsp-config` for information about keys and how to configure
   ---@type table<string, vim.lsp.Config>
   local servers = {
-    -- clangd = {},
-    -- gopls = {},
-    -- pyright = {},
+    clangd = {},
+    gopls = {},
+    pyright = {},
     -- tsc = {},
     --
     -- Some languages (like rust) have entire language plugins that can be useful:
     --    https://github.com/mrcjkb/rustaceanvim
     --
     -- But for many setups, the LSP (`rust_analyzer`) will work just fine
-    -- rust_analyzer = {},
+    rust_analyzer = {},
 
     stylua = {}, -- Used to format Lua code
 
